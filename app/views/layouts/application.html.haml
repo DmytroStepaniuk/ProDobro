@@ -31,7 +31,7 @@
             %li.d-inline
               %a= link_to 'UA', url_for(locale: :uk)
         .row.justify-content-between
-          %a.navbar-brand{href: "#"}
+          %a.navbar-brand
             = image_tag("prodobro2.png", alt: "ProDobro")
           %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", type: "button"}
             %span.navbar-toggler-icon
@@ -44,7 +44,7 @@
               %li.nav-item.active
                 %a.nav-link{href: "#"}= t(".about_us")
               %li.nav-item.active
-                %a.nav-link{href: "#"}= t(".contacts")
+                = link_to t('.contacts'), contact_path(1), class: 'nav-link'
     %section.no-gutters
       .container
         - flash.each do |message_type, message|

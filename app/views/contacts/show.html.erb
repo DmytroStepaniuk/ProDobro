@@ -1,0 +1,10 @@
+<h1>Contacts</h1>
+<p>Ви можете зв'язатись за нми за цими контактами</p>
+<%= link_to t('.edit'), edit_contact_path(@contact), class: 'btn btn-outline-info' %>
+<%= content_tag :div, nil, id: 'map' %>
+<script>
+coords = { lat: <%= @contact.address.latitude %>,
+           lng: <%= @contact.address.longitude %>
+         };
+</script>
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyB1LvZslvdPnv6eLBZDNorSQ0_4YR_m-Kg&libraries=places&callback=initMap", async: :true, defer: :true %>
