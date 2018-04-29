@@ -55,4 +55,3 @@ function moveMarker(newLatLng) {
     marker.setPosition(newLatLng);
     map.setCenter(newLatLng);
 }
-$('button').click(()=>{ ChangeAddress();});

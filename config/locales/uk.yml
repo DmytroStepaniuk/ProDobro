@@ -1,5 +1,11 @@
 ---
 uk:
+  contacts:
+    edit:
+      phone: 'Контактний телефон'
+      contacts_edit: Редагувати контакти
+      change_address: Змінити адресу
+      location: "введіть нову адресу"
   layouts: 
     application:
       title: ПроДобро

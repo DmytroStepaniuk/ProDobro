@@ -7,4 +7,4 @@ coords = { lat: <%= @contact.address.latitude %>,
            lng: <%= @contact.address.longitude %>
          };
 </script>
-<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyB1LvZslvdPnv6eLBZDNorSQ0_4YR_m-Kg&libraries=places&callback=initMap", async: :true, defer: :true %>
+<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyB1LvZslvdPnv6eLBZDNorSQ0_4YR_m-Kg&libraries=places&callback=initMap", async: :true, defer: :true%>

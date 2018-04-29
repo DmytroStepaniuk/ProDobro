@@ -8,14 +8,13 @@
       = f.simple_fields_for :address do |a|
         = a.input :latitude, as: :hidden
         = a.input :longitude, as: :hidden
-      = label_tag 'searchTextField', 'Change address'
-      %input#searchTextField.form-control.is-valid.string{placeholder: "Enter a location", type: "text"}/
+      = label_tag 'searchTextField', t('.change_address')
+      %input#searchTextField.form-control.is-valid.string{placeholder: t('.location'), type: "text"}/
       .actions
         = button_tag 'change address', type: 'button', class: 'btn btn-outline-info btn-size'
         = f.button :submit, class: 'btn btn-outline-info btn-size'
   .col-lg-7.col-md-7.map-align
     = content_tag :div, nil, id: 'map'
     :javascript
-
-
-= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyB1LvZslvdPnv6eLBZDNorSQ0_4YR_m-Kg&libraries=places&callback=initMap", async: :true, defer: :true
+      $('button').click(()=>{ ChangeAddress();});
+= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyB1LvZslvdPnv6eLBZDNorSQ0_4YR_m-Kg&language=#{locale}&libraries=places&callback=initMap", async: :true, defer: :true
