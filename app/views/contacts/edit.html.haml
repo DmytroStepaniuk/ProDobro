@@ -12,7 +12,7 @@
       %input#searchTextField.form-control.is-valid.string{placeholder: t('.location'), type: "text"}/
       .actions
         = button_tag 'change address', type: 'button', class: 'btn btn-outline-info btn-size'
-        = f.button :submit, class: 'btn btn-outline-info btn-size'
+        = f.button :submit, t("create"), class: 'btn btn-outline-info btn-size'
   .col-lg-7.col-md-7.map-align
     = content_tag :div, nil, id: 'map'
     :javascript

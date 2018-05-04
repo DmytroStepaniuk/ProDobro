@@ -1,5 +1,6 @@
 ---
 uk:
+  create: Створити
   contacts:
     edit:
       phone: 'Контактний телефон'
