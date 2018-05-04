@@ -13,7 +13,7 @@
           %p
           .comment-body= comment.body
           %br/
-          - if user_allowed_to_manage(comment)
+          - if user_can_edit_comment?(comment)
             = link_to t('.edit'), edit_polymorphic_path([@commentable, comment]) ,class: 'btn btn-outline-info'
             = link_to t('.delete'), polymorphic_path([@commentable, comment]), method: :delete, data: { confirm: t('.are_you_sure?') }, class: 'btn btn-outline-info'
           %br/

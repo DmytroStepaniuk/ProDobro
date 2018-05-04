@@ -1,11 +1,12 @@
 class CampaignsController < ApplicationController
   before_action :load_campaign, only: %i[show edit update destroy]
-  before_action :load_commentable, only: %i[show]
+
   def index
     @campaigns = Campaign.all
   end
 
   def show
+    @commentable = Campaign.find_by(id: params[:id])
     @comments = @commentable.comments
     @comment = Comment.new
   end
@@ -47,11 +48,6 @@ class CampaignsController < ApplicationController
   end
 
   private
-
-  def load_commentable
-    resource, id = request.path.split('/')[2, 3]
-    @commentable = resource.singularize.classify.constantize.find(id)
-  end
 
   def load_campaign
     @campaign = Campaign.find_by(id: params[:id]) || render_404

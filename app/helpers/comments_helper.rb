@@ -1,5 +1,5 @@
 module CommentsHelper
-  def user_allowed_to_manage(comment)
+  def user_can_edit_comment?(comment)
     user_signed_in? && (current_user.id == comment.user_id)
   end
 
