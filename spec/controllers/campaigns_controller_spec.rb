@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe CampaignsController, type: :controller do
+  it { is_expected.to use_before_action :authenticate_user! }
+
   let(:campaign) { create(:valid_campaign) }
 
   describe 'GET #index' do
@@ -25,6 +27,8 @@ RSpec.describe CampaignsController, type: :controller do
   end
 
   describe 'GET #new' do
+    before { expect(controller).to receive :authenticate_user! }
+
     it 'renders new template' do
       get :new
       is_expected.to render_template(:new)

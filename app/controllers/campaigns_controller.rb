@@ -1,6 +1,8 @@
 class CampaignsController < ApplicationController
   before_action :load_campaign, only: %i[show edit update destroy]
 
+  before_action :authenticate_user!, only: :new
+
   def index
     @campaigns = Campaign.all
   end
