@@ -5,3 +5,4 @@ config/database.yml
 .env
 public/assets
 .byebug_history
+.ruby-gemset
